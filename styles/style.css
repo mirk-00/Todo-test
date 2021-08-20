@@ -1,0 +1,223 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  max-height: 100vh;
+  width: 100vw;
+  background-image: linear-gradient(120deg, #282a36, #455265);
+  font-family: 'Poppins', sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow-x: visible;
+  overflow-y: hidden;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+header, form {
+  font-size: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header {
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+h1 {
+  background: -webkit-linear-gradient(180deg, #619ea9, #759fac);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+form input, form button {
+  padding: 0.5rem;
+  font-size: 2rem;
+  border: none;
+  border-radius: 1.5rem;
+}
+
+form input {
+  width: 85%;
+  outline: none;
+}
+
+form button {
+  background: #455265;
+  color: #759fac;
+  width: 15%;
+  cursor: pointer;
+  border-radius: 2rem;
+  -webkit-transition: all 400ms;
+  transition: all 400ms;
+}
+
+form button:hover {
+  background: #759fac;
+  color: #455265;
+}
+
+.mega-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0 30vw;
+  width: 100%;
+  overflow-x: visible;
+}
+
+.center-container {
+  margin-bottom: 2rem;
+}
+
+.fake-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  border-radius: 1.5rem;
+  background-color: #455265;
+  -webkit-transition: all 400ms;
+  transition: all 400ms;
+}
+
+.fa-plus-square {
+  padding-right: 0.5rem;
+}
+
+/* 
+ul              .todo-list
+    div         .todo
+        li      .todo-item
+        button  .complete-button
+        button  .trash-button
+*/
+.todo-list, .todo-container {
+  overflow-x: visible;
+  overflow-y: scroll;
+}
+
+.todo-list::-webkit-scrollbar, .todo-container::-webkit-scrollbar {
+  display: none;
+}
+
+.todo-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.5rem;
+  max-height: 55vh;
+}
+
+.todo-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  list-style: none;
+  width: 100%;
+  margin: 0px;
+}
+
+.todo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: white;
+  width: 100%;
+  border-radius: 2rem;
+  margin: 0.5rem 0rem 0rem 0rem;
+  padding: 0.5rem;
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+
+.todo .trash-button:hover {
+  color: #b64569;
+}
+
+.todo .complete-button:hover {
+  color: #619ea9;
+}
+
+.todo button {
+  font-size: 1.3rem;
+  border: none;
+  color: #455265;
+  background-color: transparent;
+  margin: 0.5rem;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+.todo-item {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  width: 100%;
+  pointer-events: none;
+}
+
+.fas {
+  pointer-events: none;
+}
+
+.checked {
+  background-color: #455265;
+  color: #759fac;
+  opacity: 0.5;
+}
+
+.checked .trash-button {
+  -webkit-transition: all;
+  transition: all;
+  color: inherit;
+}
+
+.removing {
+  -webkit-transition: all 0.8s ease;
+  transition: all 0.8s ease;
+  -webkit-transform: translateX(16rem);
+          transform: translateX(16rem);
+  opacity: 0;
+}
+/*# sourceMappingURL=style.css.map */

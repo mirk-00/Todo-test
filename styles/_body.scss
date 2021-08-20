@@ -1,0 +1,164 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    max-height: 100vh;
+    width: 100vw;
+    background-image: linear-gradient(120deg, $very-black, $not-so-black);
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+   overflow-x: visible;
+   overflow-y: hidden;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+}
+
+header, form {
+    font-size: 1.5rem;
+    display: flex;
+
+}
+header {
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    justify-content: center;
+    align-content: center;
+}
+h1 {
+
+    background: -webkit-linear-gradient(180deg, $cyan, $des-cyan);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+form input, form button {
+    padding: 0.5rem;
+    font-size: 2rem;
+    border: none;
+    border-radius: 1.5rem;
+}
+form input {
+    width: 85%;
+    outline: none;
+}
+form button {
+    background: $not-so-black;
+    color: $des-cyan;
+    width: 15%;
+    cursor: pointer;
+    border-radius: 2rem;
+    transition: all 400ms;
+    &:hover {
+        background: $des-cyan;
+        color: $not-so-black;
+    }
+}
+.mega-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 30vw;
+    width: 100%;
+    overflow-x: visible;
+
+}
+.center-container {
+    margin-bottom: 2rem;
+}
+.fake-input {
+    display: flex;
+    width: 100%;
+    border-radius: 1.5rem;
+    background-color:$not-so-black;
+    transition: all 400ms;
+}
+.fa-plus-square {
+    padding-right: 0.5rem;
+}
+
+// struttura finale
+/* 
+ul              .todo-list
+    div         .todo
+        li      .todo-item
+        button  .complete-button
+        button  .trash-button
+*/
+.todo-list, .todo-container {
+    overflow-x: visible;
+    overflow-y: scroll; 
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.todo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.5rem;
+    max-height: 55vh;
+
+}
+.todo-list {
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    list-style: none;
+    width: 100%;
+    margin: 0px;
+}
+.todo {
+    display: flex;
+    background-color: white;
+    width: 100%;
+    border-radius: 2rem;
+    margin: 0.5rem 0rem 0rem 0rem;
+    padding: 0.5rem;
+    transition: all 500ms ease;
+    & .trash-button:hover {
+        color: $des-red;
+    }
+    & .complete-button:hover {
+        color: $cyan;
+    }
+    & button {
+        font-size: 1.3rem;
+        border: none;
+        color: $not-so-black;
+        background-color: transparent;
+        margin: 0.5rem;
+        border-radius: 1.5rem;
+        cursor: pointer;
+        transition: all 300ms ease;
+    }
+}
+
+.todo-item {
+    flex: 1;
+    width: 100%;
+    pointer-events: none;
+}
+.fas {
+    pointer-events: none;
+}
+.checked {
+    background-color: $not-so-black;
+    color: $des-cyan;
+    opacity: 0.5;
+    & .trash-button {
+        transition: all;
+        color: inherit;
+    }
+}
+.removing {
+    transition: all 0.8s ease;
+    transform: translateX(16rem);
+    opacity: 0;
+}
