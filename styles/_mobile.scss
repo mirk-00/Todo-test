@@ -31,5 +31,13 @@ header {
 .todo-container{
     max-height: 60vh;
 }
+.dodoicon {
+    position: fixed;
+    height: 3rem;
+    right: 10vw;
+    & * {
+        height: 100%;
+    }
+}
 
 }
