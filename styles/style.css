@@ -52,11 +52,15 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
 }
 
 .dodoicon {
   height: 4rem;
   margin-left: 3rem;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
 }
 
 .dodoicon * {
@@ -66,6 +70,8 @@ header {
 h1 {
   background: -webkit-linear-gradient(180deg, #619ea9, #759fac);
   background-clip: text;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -99,12 +105,16 @@ form button:hover {
 
 .column-center {
   width: 40vw;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
 }
 
 .column-left, .column-right {
   width: 30vw;
   padding-top: 20vh;
   position: relative;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
 }
 
 .mega-container {
@@ -255,6 +265,8 @@ ul              .todo-list
   padding: 0.5rem;
   border-radius: 2rem;
   text-align: center;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
 }
 
 .selector div {
