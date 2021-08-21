@@ -292,8 +292,8 @@ ul              .todo-list
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
-    left: 63.2vw;
-    top: 18vh;
+    left: 60vw;
+    top: 19vh;
   }
   .selector div {
     margin: 0rem 0.8rem;
