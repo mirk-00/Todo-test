@@ -199,6 +199,9 @@ ul              .todo-list
   border-radius: 2rem;
   margin: 0.5rem 0rem 0rem 0rem;
   padding: 0.5rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-transition: all 500ms ease;
   transition: all 500ms ease;
   overflow-y: visible;
