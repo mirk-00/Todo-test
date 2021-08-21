@@ -23,16 +23,26 @@ body {
 header, form {
     font-size: 1.5rem;
     display: flex;
-
 }
+
 header {
+    display: flex;
     margin-top: 10vh;
     margin-bottom: 10vh;
+    user-select: none;
     justify-content: center;
     align-content: center;
+    align-items: center;
+}
+.dodoicon {
+    display: inline-block;
+    height: 4rem;
+    margin-left: 3rem;
+    & * {
+        height: 100%;
+    }
 }
 h1 {
-
     background: -webkit-linear-gradient(180deg, $cyan, $des-cyan);
     background-clip: text;
     -webkit-background-clip: text;
