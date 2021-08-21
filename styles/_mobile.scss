@@ -18,7 +18,8 @@ header {
     position: fixed;
     margin: 0rem;
     width: fit-content;
-    left: 55vw;
+    left: 50vw;
+    transform: translate(-50%, -50%);
     top: 19vh;
     & div {
         margin: 0rem 0.8rem;

@@ -292,7 +292,9 @@ ul              .todo-list
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
-    left: 55vw;
+    left: 50vw;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
     top: 19vh;
   }
   .selector div {
