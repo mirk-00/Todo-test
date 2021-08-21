@@ -1,0 +1,31 @@
+@media (max-width:767px) {
+
+header {
+    font-size: 1.5rem;
+    margin-top: 6vh;
+}
+.column-center {
+    width: 70vw;
+}
+.column-left, .column-right {
+    width: 15vw;
+    padding-top: 20vh;
+    position: relative;
+}
+.selector {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    margin: 0rem;
+    width: fit-content;
+    left: 63.2vw; //allineato con il button
+    top: 18vh;
+    & div {
+        margin: 0rem 0.8rem;
+    }
+}
+.todo-container{
+    max-height: 60vh;
+}
+
+}

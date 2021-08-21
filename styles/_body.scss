@@ -2,6 +2,7 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -11,13 +12,12 @@ body {
     background-image: linear-gradient(120deg, $very-black, $not-so-black);
     font-family: 'Poppins', sans-serif;
     display: flex;
-    flex-direction: column;
-   overflow-x: visible;
-   overflow-y: hidden;
+    flex-direction: row;
+    overflow-x: visible;
+    overflow-y: hidden;
     &::-webkit-scrollbar {
         display: none;
     }
-
 }
 
 header, form {
@@ -60,13 +60,21 @@ form button {
         color: $not-so-black;
     }
 }
+.column-center {
+    width: 40vw;
+}
+.column-left, .column-right {
+    width: 30vw;
+    padding-top: 20vh;
+    position: relative;
+}
+
 .mega-container {
     display: flex;
     flex-direction: column;
-    padding: 0 30vw;
+    /* padding: 0 25vw; */
     width: 100%;
     overflow-x: visible;
-
 }
 .center-container {
     margin-bottom: 2rem;
@@ -104,16 +112,18 @@ ul              .todo-list
     align-items: center;
     font-size: 1.5rem;
     max-height: 55vh;
+    overflow-y: visible;
+    overflow-x: scroll;
 
 }
-.todo-list {
+/* .todo-list {
     display: flex;
     flex-direction: column;
     align-items:flex-start;
     list-style: none;
     width: 100%;
     margin: 0px;
-}
+} */
 .todo {
     display: flex;
     background-color: white;
@@ -122,6 +132,10 @@ ul              .todo-list
     margin: 0.5rem 0rem 0rem 0rem;
     padding: 0.5rem;
     transition: all 500ms ease;
+    overflow-y: visible;
+    & .fas {
+        pointer-events: none;
+    }
     & .trash-button:hover {
         color: $des-red;
     }
@@ -145,9 +159,7 @@ ul              .todo-list
     width: 100%;
     pointer-events: none;
 }
-.fas {
-    pointer-events: none;
-}
+
 .checked {
     background-color: $not-so-black;
     color: $des-cyan;
@@ -158,7 +170,44 @@ ul              .todo-list
     }
 }
 .removing {
-    transition: all 0.8s ease;
-    transform: translateX(16rem);
+    transition: all 0.4s ease;
+    transform: translateX(26rem);
     opacity: 0;
+}
+
+.selector {
+    position: absolute;
+    left: 5%;
+    margin-left: 4rem;
+    outline: none;
+    background-color: $not-so-black;
+    padding: 0.5rem;
+    border-radius: 2rem;
+    text-align: center;
+
+    & div {
+        margin: 0.4rem;
+        font-size: 1.2rem;
+        color: $des-cyan;
+        opacity: 0.8;
+        cursor: pointer;
+        transition: all 300ms ease-in;
+        & i {
+            pointer-events: none;
+        }
+        &:hover {
+            transition: all 300ms ease;
+            color: white;
+            text-shadow: 
+            0 0 12px $cyan,
+            0 0 2px cyan;
+        }
+    }
+}
+.toggled {
+    transition: all 300ms ease;
+    color: white !important;
+    text-shadow: 
+        0 0 12px $cyan,
+        0 0 2px cyan;
 }

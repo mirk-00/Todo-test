@@ -3,6 +3,7 @@
   padding: 0px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -14,10 +15,10 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-direction: row;
+          flex-direction: row;
   overflow-x: visible;
   overflow-y: hidden;
 }
@@ -77,6 +78,16 @@ form button:hover {
   color: #455265;
 }
 
+.column-center {
+  width: 40vw;
+}
+
+.column-left, .column-right {
+  width: 30vw;
+  padding-top: 20vh;
+  position: relative;
+}
+
 .mega-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -85,7 +96,7 @@ form button:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 0 30vw;
+  /* padding: 0 25vw; */
   width: 100%;
   overflow-x: visible;
 }
@@ -138,24 +149,18 @@ ul              .todo-list
           align-items: center;
   font-size: 1.5rem;
   max-height: 55vh;
+  overflow-y: visible;
+  overflow-x: scroll;
 }
 
-.todo-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  list-style: none;
-  width: 100%;
-  margin: 0px;
-}
-
+/* .todo-list {
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    list-style: none;
+    width: 100%;
+    margin: 0px;
+} */
 .todo {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -167,6 +172,11 @@ ul              .todo-list
   padding: 0.5rem;
   -webkit-transition: all 500ms ease;
   transition: all 500ms ease;
+  overflow-y: visible;
+}
+
+.todo .fas {
+  pointer-events: none;
 }
 
 .todo .trash-button:hover {
@@ -197,10 +207,6 @@ ul              .todo-list
   pointer-events: none;
 }
 
-.fas {
-  pointer-events: none;
-}
-
 .checked {
   background-color: #455265;
   color: #759fac;
@@ -214,10 +220,86 @@ ul              .todo-list
 }
 
 .removing {
-  -webkit-transition: all 0.8s ease;
-  transition: all 0.8s ease;
-  -webkit-transform: translateX(16rem);
-          transform: translateX(16rem);
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  -webkit-transform: translateX(26rem);
+          transform: translateX(26rem);
   opacity: 0;
+}
+
+.selector {
+  position: absolute;
+  left: 5%;
+  margin-left: 4rem;
+  outline: none;
+  background-color: #455265;
+  padding: 0.5rem;
+  border-radius: 2rem;
+  text-align: center;
+}
+
+.selector div {
+  margin: 0.4rem;
+  font-size: 1.2rem;
+  color: #759fac;
+  opacity: 0.8;
+  cursor: pointer;
+  -webkit-transition: all 300ms ease-in;
+  transition: all 300ms ease-in;
+}
+
+.selector div i {
+  pointer-events: none;
+}
+
+.selector div:hover {
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+  color: white;
+  text-shadow: 0 0 12px #619ea9, 0 0 2px cyan;
+}
+
+.toggled {
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+  color: white !important;
+  text-shadow: 0 0 12px #619ea9, 0 0 2px cyan;
+}
+
+@media (max-width: 767px) {
+  header {
+    font-size: 1.5rem;
+    margin-top: 6vh;
+  }
+  .column-center {
+    width: 70vw;
+  }
+  .column-left, .column-right {
+    width: 15vw;
+    padding-top: 20vh;
+    position: relative;
+  }
+  .selector {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    position: fixed;
+    margin: 0rem;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    left: 63.2vw;
+    top: 18vh;
+  }
+  .selector div {
+    margin: 0rem 0.8rem;
+  }
+  .todo-container {
+    max-height: 60vh;
+  }
 }
 /*# sourceMappingURL=style.css.map */
