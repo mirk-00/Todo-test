@@ -14,6 +14,7 @@ const todoButton = document.querySelector('.todo-button');
 const todoCont = document.querySelector(".todo-container");
 const fakeInput = document.querySelector(".fake-input");
 const checkFilter = document.querySelector(".icon2");
+const selector = document.querySelector(".selector");
 
 var cyan = '#619ea9';
 var not_so_black = '#455265';
@@ -24,6 +25,9 @@ todoButton.addEventListener('click', addtodo);
 todoButton.addEventListener('mouseenter', changeColor);
 todoButton.addEventListener('mouseleave', resetBtnColor);
 todoCont.addEventListener('click', eventButton);
+todoInput.addEventListener('focus', toggleSelector);
+todoInput.addEventListener('blur', toggleSelector);
+
 
 //Functions
 function changeColor(event) {
@@ -122,6 +126,10 @@ icon2.addEventListener('click', toggleIcon);
 icon3.addEventListener('click', toggleIcon);
 
 //Functions
+function toggleSelector() {
+    selector.classList.toggle('fading')
+}
+
 function resetToggle(ele) {
     if (ele.classList.contains('toggled')) {
         ele.classList.toggle('toggled')

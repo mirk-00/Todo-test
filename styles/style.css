@@ -179,7 +179,7 @@ ul              .todo-list
   font-size: 1.5rem;
   max-height: 55vh;
   overflow-y: visible;
-  overflow-x: scroll;
+  overflow-x: visible;
 }
 
 /* .todo-list {
@@ -253,6 +253,10 @@ ul              .todo-list
   transition: all 0.4s ease;
   -webkit-transform: translateX(26rem);
           transform: translateX(26rem);
+  opacity: 0;
+}
+
+.fading {
   opacity: 0;
 }
 

@@ -128,7 +128,7 @@ ul              .todo-list
     font-size: 1.5rem;
     max-height: 55vh;
     overflow-y: visible;
-    overflow-x: scroll;
+    overflow-x: visible;
 
 }
 /* .todo-list {
@@ -190,6 +190,9 @@ ul              .todo-list
     opacity: 0;
 }
 
+.fading {
+    opacity: 0;
+}
 .selector {
     position: absolute;
     left: 5%;
@@ -200,7 +203,6 @@ ul              .todo-list
     border-radius: 2rem;
     text-align: center;
     transition: all 300ms ease;
-
     & div {
         margin: 0.4rem;
         font-size: 1.2rem;
