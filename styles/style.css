@@ -273,6 +273,10 @@ ul              .todo-list
 
 .selector div {
   margin: 0.4rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   font-size: 1.2rem;
   color: #759fac;
   opacity: 0.8;

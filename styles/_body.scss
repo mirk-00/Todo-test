@@ -201,6 +201,7 @@ ul              .todo-list
     transition: all 300ms ease;
     & div {
         margin: 0.4rem;
+        user-select: none;
         font-size: 1.2rem;
         color: $des-cyan;
         opacity: 0.8;
