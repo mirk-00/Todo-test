@@ -13,10 +13,10 @@ const todoInput = document.querySelector('.todo-input');
 const todoButton = document.querySelector('.todo-button');
 const todoCont = document.querySelector(".todo-container");
 const fakeInput = document.querySelector(".fake-input");
-const checkFilter = document.querySelector(".icon2");
-const selector = document.querySelector(".selector");
+
 
 var cyan = '#619ea9';
+var des_cyan = '#759fac';
 var not_so_black = '#455265';
 
 //Event Listeners
@@ -25,13 +25,10 @@ todoButton.addEventListener('click', addtodo);
 todoButton.addEventListener('mouseenter', changeColor);
 todoButton.addEventListener('mouseleave', resetBtnColor);
 todoCont.addEventListener('click', eventButton);
-todoInput.addEventListener('focus', toggleSelector);
-todoInput.addEventListener('blur', toggleSelector);
-
 
 //Functions
 function changeColor(event) {
-    fakeInput.style.backgroundColor = cyan;
+    fakeInput.style.backgroundColor = des_cyan;
 };
 function resetBtnColor(event) {
     fakeInput.style.backgroundColor = not_so_black;
@@ -49,7 +46,7 @@ function addtodo(event) {
     todoDiv.classList.add('todo');
     saveTodo(todoInput.value);
     // if checked filter on don't show new todo
-    if (checkFilter.classList.contains('toggled')) {
+    if (icon2.classList.contains('toggled')) {
         todoDiv.style.display = 'none';
     }
     //create LI
@@ -115,6 +112,7 @@ function eventSwipe(e) {
 }
 
 //FILTERS
+const selector = document.querySelector(".selector");
 const icon1 = document.querySelector('.icon1');
 const icon2 = document.querySelector('.icon2');
 const icon3 = document.querySelector('.icon3');
@@ -124,6 +122,8 @@ const icon_array = [icon1, icon2, icon3];
 icon1.addEventListener('click', toggleIcon);
 icon2.addEventListener('click', toggleIcon);
 icon3.addEventListener('click', toggleIcon);
+todoInput.addEventListener('focus', toggleSelector);
+todoInput.addEventListener('blur', toggleSelector);
 
 //Functions
 function toggleSelector() {
@@ -132,13 +132,8 @@ function toggleSelector() {
 
 function resetToggle(ele) {
     if (ele.classList.contains('toggled')) {
-        ele.classList.toggle('toggled')
+        ele.classList.toggle('toggled');
     };
-function showCompleted(ele) {
-    if (ele.classList.contains('checked')) {
-        ele.style.display = 'flex'
-    } else {ele.style.display = 'none'};
-}
 
 };
 function toggleIcon(e) {
@@ -240,4 +235,80 @@ function completeLocalTodo(todoLine) {
     } 
     else { values.states[idx] = 0};
     localStorage.setItem('states', JSON.stringify(values.states));
+}
+
+// THEMES
+// Variables
+const tint = document.querySelector('.tint');
+const theme = document.querySelector('.theme');
+const slider = document.querySelector('#slider');
+const moon = document.querySelector('.moon');
+const sun = document.querySelector('.sun');
+const html = document.querySelector('html');
+const lightMode = document.querySelector('.light-mode')
+const darkMode = document.querySelector('.dark-mode')
+
+theme_array = [moon, sun];
+
+// Listeners
+tint.addEventListener('click', showThemes);
+moon.addEventListener('click', toggleTheme);
+sun.addEventListener('click', toggleTheme);
+
+// Functions
+$("#slider").roundSlider({
+    radius: 60,
+    width: 8,
+    startValue:0,
+    max: 360,
+    handleSize: "+16",
+    handleShape: "dot",
+    sliderType: "min-range",
+
+});
+
+function showThemes() {
+    tint.classList.toggle('toggled');
+    slider.classList.toggle('show-slider')}
+
+slider.valueChange = setTheme;
+
+function setTheme() {
+    var slider_value = $("#slider")[0].textContent;
+    console.log(slider_value);
+    if (sun.classList.contains('toggled')) {
+        var filter_value = 'invert(1) hue-rotate(' + slider_value + 'deg)';
+        $('.light-mode').css({
+            'filter': filter_value,
+            '-webkit-filter': filter_value});
+    }   else {
+    var filter_value = 'invert(0) hue-rotate(' + slider_value + 'deg)';
+    $(".dark-mode").css({
+        'filter': filter_value,
+        '-webkit-filter': filter_value});
+}
+}
+
+
+function toggleTheme(e) {
+    theme_array.forEach(resetToggle);
+    target = e.target;
+    target.classList.toggle('toggled');
+    console.log(target.classList[0])
+    switch (target.classList[0]) {
+        case 'moon':
+            if (html.classList.contains('light-mode')) {
+                html.classList.toggle('light-mode');
+            };
+            if (html.classList.contains('dark-mode')) {}
+            else { html.classList.toggle('dark-mode')}
+            break;
+        case 'sun':
+            if (html.classList.contains('light-mode')) {} 
+            else {html.classList.toggle('light-mode')};
+            
+            if (html.classList.contains('dark-mode')) {
+                html.classList.toggle('dark-mode')}
+            break;
+    }
 }

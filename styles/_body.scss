@@ -5,12 +5,29 @@
     scroll-behavior: smooth;
 }
 
+.light-mode {
+    filter: invert(1) hue-rotate(0deg);
+    & input {
+        filter: invert(1);
+    }
+    & .todo {
+        filter: invert(1);
+        & button {
+            filter: invert(1);
+        }
+    }
+}
+.dark-mode {
+    filter: invert(0) hue-rotate(0deg);
+}
+
+
 body {
     height: 100vh;
     max-height: 100vh;
     width: 100vw;
     background-image: linear-gradient(120deg, $very-black, $not-so-black);
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif !important;
     display: flex;
     flex-direction: row;
     overflow-x: visible;
@@ -59,6 +76,7 @@ form input, form button {
 form input {
     width: 85%;
     outline: none;
+    background-color: $white;
 }
 form button {
     background: $not-so-black;
@@ -82,6 +100,18 @@ form button {
     padding-top: 20vh;
     position: relative;
     transition: all 300ms ease;
+}
+.column-left {
+    position: relative;
+    display: flex;
+    padding-top: 8vh;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding-right: 5vw;
+    & > * {
+        margin: 2vh 0px;
+    }
 }
 
 .mega-container {
@@ -134,7 +164,7 @@ ul              .todo-list
 
 .todo {
     display: flex;
-    background-color: white;
+    background-color: $white;
     width: 60%;
     border-radius: 2rem;
     margin: 0.5rem 0rem 0rem 0rem;
@@ -225,4 +255,100 @@ ul              .todo-list
     text-shadow: 
         0 0 12px $cyan,
         0 0 2px cyan;
+}
+.theme {
+    /* position: fixed; */
+    display: flex;
+    flex-direction: column;
+    width: 3rem;
+    height: fit-content;
+    left: 15vw;
+    top: 12vh;
+    margin-left: 4rem;
+    outline: none;
+    background-color: $not-so-black;
+    padding: 0.5rem;
+    border-radius: 2rem;
+    text-align: center;
+    transition: all 300ms ease;
+    & > div {
+        margin: 0.4rem;
+        user-select: none;
+        font-size: 1.2rem;
+        color: $des-cyan;
+        opacity: 0.8;
+        cursor: pointer;
+        transition: all 300ms ease-in;
+        & i {
+            pointer-events: none;
+        }
+        &:hover {
+            transition: all 300ms ease;
+            color: white;
+            text-shadow: 
+            0 0 12px $cyan,
+            0 0 2px cyan;
+        }
+}}
+.show-slider {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+
+
+// round slider
+#slider {
+    opacity: 0;
+    position: relative;
+    transition: all 400ms ease;
+    pointer-events: none;
+    left: 12%;
+}
+.rs-tooltip.rs-edit {
+    user-select: none;
+    pointer-events: none;
+    font-size: 1.3rem;
+    font-family: inherit;
+    color: $white;
+}
+#slider .rs-range-color  {
+    background-color: #ffffff00;
+}
+#slider .rs-path-color  {
+    background-color: #ffffff00;
+}
+#slider .rs-handle  { // rs-handle rs-move rs-handle-dot
+    background-color: $des-cyan;
+    padding: 7px;
+    border: none;
+}
+#slider .rs-handle.rs-handle-dot {
+    width: 16px !important;
+    height: 16px !important;
+    box-shadow: 0 0 12px $des-cyan;
+    cursor: pointer;
+}
+#slider .rs-handle.rs-move.rs-handle-dot {
+    width: 16px !important;
+    height: 16px !important;
+    box-shadow: none;
+}
+#slider .rs-handle:after  {
+    border-color: #ffffff00;
+    background-color: #ffffff00;
+}
+#slider .rs-border  {
+    border-color: $des-cyan;
+    box-shadow: 0 0 12px $cyan;
+}
+#slider .rs-bg-color {
+    background-color: #ffffff00;
+}
+
+#slider .rs-inner-container {
+    overflow: visible;
+}
+
+#slider .rs-block > span {
+    padding: 0px !important;
 }

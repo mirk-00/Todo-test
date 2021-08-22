@@ -12,6 +12,9 @@ header {
     padding-top: 20vh;
     position: relative;
 }
+.column-left {
+    padding-top: 5vh;
+}
 .selector {
     display: flex;
     flex-direction: row;
@@ -44,5 +47,14 @@ header {
         height: 100%;
     }
 }
+#slider {
+    margin-left: auto;
+    left: 3vw;
+}
+#slider .rs-container.rs-full {
+    width: 90px !important;
+    height: 90px !important;
+}
 
 }
+
