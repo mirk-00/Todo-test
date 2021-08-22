@@ -337,7 +337,7 @@ ul              .todo-list
     padding-right: 0.7rem;
   }
   .todo-container {
-    max-height: 60vh;
+    max-height: 50vh;
     width: 80vw;
   }
   .todo {
