@@ -287,6 +287,13 @@ ul              .todo-list
   background-color: #455265;
   color: #759fac;
   opacity: 0.5;
+  -webkit-filter: invert(0) !important;
+          filter: invert(0) !important;
+}
+
+.checked button {
+  -webkit-filter: hue-rotate(180deg) invert(1) !important;
+          filter: hue-rotate(180deg) invert(1) !important;
 }
 
 .checked .trash-button {

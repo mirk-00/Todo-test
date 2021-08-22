@@ -205,6 +205,10 @@ ul              .todo-list
     background-color: $not-so-black;
     color: $des-cyan;
     opacity: 0.5;
+    filter: invert(0) !important;
+    & button {
+        filter: hue-rotate(180deg) invert(1) !important;
+    }
     & .trash-button {
         transition: all;
         color: inherit;

@@ -275,7 +275,6 @@ slider.valueChange = setTheme;
 
 function setTheme() {
     var slider_value = $("#slider")[0].textContent;
-    console.log(slider_value);
     if (sun.classList.contains('toggled')) {
         var filter_value = 'invert(1) hue-rotate(' + slider_value + 'deg)';
         $('.light-mode').css({
@@ -294,18 +293,25 @@ function toggleTheme(e) {
     theme_array.forEach(resetToggle);
     target = e.target;
     target.classList.toggle('toggled');
-    console.log(target.classList[0])
     switch (target.classList[0]) {
         case 'moon':
             if (html.classList.contains('light-mode')) {
                 html.classList.toggle('light-mode');
+                $('.checked button').css('filter', 'invert(0) hue-rotate(0deg)');
+                $('.selector > div').css('filter', 'invert(0) hue-rotate(0deg)');
+                $('.theme > div').css('filter', 'invert(0) hue-rotate(0deg)');
             };
             if (html.classList.contains('dark-mode')) {}
             else { html.classList.toggle('dark-mode')}
             break;
         case 'sun':
             if (html.classList.contains('light-mode')) {} 
-            else {html.classList.toggle('light-mode')};
+            else {
+                html.classList.toggle('light-mode');
+                $('.checked button').css('filter', 'invert(1) hue-rotate(180deg)');
+                $('.selector > div').css('filter', 'invert(1) hue-rotate(180deg)');
+                $('.theme > div').css('filter', 'invert(1) hue-rotate(180deg)');
+            };
             
             if (html.classList.contains('dark-mode')) {
                 html.classList.toggle('dark-mode')}
