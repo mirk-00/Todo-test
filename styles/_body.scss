@@ -124,25 +124,18 @@ ul              .todo-list
 .todo-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     font-size: 1.5rem;
     max-height: 55vh;
-    overflow-y: visible;
-    overflow-x: visible;
-
+    width: 70vw;
+    overflow: scroll;
+    z-index: 2;
 }
-/* .todo-list {
-    display: flex;
-    flex-direction: column;
-    align-items:flex-start;
-    list-style: none;
-    width: 100%;
-    margin: 0px;
-} */
+
 .todo {
     display: flex;
     background-color: white;
-    width: 100%;
+    width: 60%;
     border-radius: 2rem;
     margin: 0.5rem 0rem 0rem 0rem;
     padding: 0.5rem;
@@ -174,6 +167,8 @@ ul              .todo-list
     flex: 1;
     width: 100%;
     pointer-events: none;
+    height: auto;
+    overflow-wrap: break-word;
 }
 
 .checked {
