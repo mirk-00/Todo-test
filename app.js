@@ -87,7 +87,7 @@ function eventButton(e) {
         setTimeout(function() {
             removeLocalTodos(todoLine);
             todoLine.remove();
-        }, 600);
+        }, 800);
     };
     if (target.classList[0] === 'complete-button') {
         todoLine.classList.toggle('checked');
@@ -110,7 +110,7 @@ function eventSwipe(e) {
         setTimeout(function() {
             removeLocalTodos(target);
             target.remove();
-        }, 400);
+        }, 800);
     }
 }
 

@@ -247,8 +247,8 @@ ul              .todo-list
 }
 
 .removing {
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
+  -webkit-transition: all 0.8s ease;
+  transition: all 0.8s ease;
   -webkit-transform: translateX(26rem);
           transform: translateX(26rem);
   opacity: 0;
@@ -337,8 +337,9 @@ ul              .todo-list
     padding-right: 0.7rem;
   }
   .todo-container {
-    max-height: 50vh;
+    max-height: 55vh;
     width: 80vw;
+    margin-bottom: 10vh;
   }
   .todo {
     width: 80%;
