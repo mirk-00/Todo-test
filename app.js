@@ -8,6 +8,8 @@ div                 .todo-container
             button  .trash-button
 */
 
+document.requestFullscreen()
+
 //Selectors
 const todoInput = document.querySelector('.todo-input');
 const todoButton = document.querySelector('.todo-button');
