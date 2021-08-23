@@ -112,7 +112,7 @@ function eventSwipe(e) {
 }
 
 //FILTERS
-const selector = document.querySelector(".selector");
+const selector = document.querySelector("#selector");
 const icon1 = document.querySelector('.icon1');
 const icon2 = document.querySelector('.icon2');
 const icon3 = document.querySelector('.icon3');
@@ -240,6 +240,7 @@ function completeLocalTodo(todoLine) {
 // THEMES
 // Variables
 const tint = document.querySelector('.tint');
+const close = document.querySelector('.close');
 const theme = document.querySelector('.theme');
 const slider = document.querySelector('#slider');
 const moon = document.querySelector('.moon');
@@ -253,6 +254,7 @@ theme_array = [moon, sun];
 
 // Listeners
 tint.addEventListener('click', showThemes);
+close.addEventListener('click', showThemes);
 moon.addEventListener('click', toggleTheme);
 sun.addEventListener('click', toggleTheme);
 

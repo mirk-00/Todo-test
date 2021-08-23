@@ -15,7 +15,7 @@ header {
 .column-left {
     padding-top: 5vh;
 }
-.selector {
+#selector {
     display: flex;
     flex-direction: row;
     position: fixed;
@@ -56,5 +56,26 @@ header {
     height: 90px !important;
 }
 
+
+.sliding-menu {
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    overflow: visible;
+}
+.theme {
+    display: flex;
+    margin: 0px;
+    flex-direction: row;
+    padding: 0px 0.3rem;
+}
+.slider-cont {
+    height: 50%;
+    width: auto;
+    margin: 10%;
+}
+.close {
+    margin: 0px;
+}
 }
 
