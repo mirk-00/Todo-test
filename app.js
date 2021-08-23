@@ -245,8 +245,9 @@ const slider = document.querySelector('#slider');
 const moon = document.querySelector('.moon');
 const sun = document.querySelector('.sun');
 const html = document.querySelector('html');
-const lightMode = document.querySelector('.light-mode')
-const darkMode = document.querySelector('.dark-mode')
+const lightMode = document.querySelector('.light-mode');
+const darkMode = document.querySelector('.dark-mode');
+const menu = document.querySelector('.sliding-menu');
 
 theme_array = [moon, sun];
 
@@ -257,7 +258,7 @@ sun.addEventListener('click', toggleTheme);
 
 // Functions
 $("#slider").roundSlider({
-    radius: 60,
+    radius: 70,
     width: 8,
     startValue:0,
     max: 360,
@@ -265,11 +266,22 @@ $("#slider").roundSlider({
     handleShape: "dot",
     sliderType: "min-range",
 
+    beforeCreate: function () {
+        this.options.radius = this.control.parent().height() / 2.4;
+    
+        this["_bind"]($(window), "resize", function () {
+          var radius = this.control.parent().height() / 2.4;
+          this.option("radius", radius);
+        });
+      }
+
 });
 
 function showThemes() {
     tint.classList.toggle('toggled');
-    slider.classList.toggle('show-slider')}
+    slider.classList.toggle('show-slider');
+    menu.classList.toggle('show-slider');
+}
 
 slider.valueChange = setTheme;
 
@@ -312,7 +324,6 @@ function toggleTheme(e) {
                 $('.selector > div').css('filter', 'invert(1) hue-rotate(180deg)');
                 $('.theme > div').css('filter', 'invert(1) hue-rotate(180deg)');
             };
-            
             if (html.classList.contains('dark-mode')) {
                 html.classList.toggle('dark-mode')}
             break;
@@ -323,12 +334,7 @@ function toggleTheme(e) {
 // Fullscreen
 const fs = document.querySelector('.fs');
 
-fs.addEventListener('click', toggleFs);
-
-function toggleFs() {
-    fs.classList.toggle('toggled');
-    toggleFullScreen();
-}
+fs.addEventListener('click', toggleFullScreen);
 
 function toggleFullScreen() {
     var doc = window.document;
@@ -339,8 +345,10 @@ function toggleFullScreen() {
   
     if(!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
       requestFullScreen.call(docEl);
+      fs.classList.add('toggled')
     }
     else {
       cancelFullScreen.call(doc);
+      fs.classList.remove('toggled')
     }
   }

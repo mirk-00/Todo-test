@@ -104,14 +104,10 @@ form button {
 .column-left {
     position: relative;
     display: flex;
-    padding-top: 8vh;
     flex-direction: column;
     align-items: flex-end;
     justify-content: flex-start;
     padding-right: 5vw;
-    & > * {
-        margin: 2vh 0px;
-    }
 }
 
 .mega-container {
@@ -260,21 +256,73 @@ ul              .todo-list
         0 0 12px $cyan,
         0 0 2px cyan;
 }
-.theme {
-    /* position: fixed; */
+.sliding-menu {
+    opacity: 0;
+    pointer-events: none;
+
+    padding: 20px;
+    display: flex;
+    flex-direction: row-reverse;
+    box-shadow: 0 0 12px $des-cyan;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    width: 40vw;
+    height: 40vh;
+    background-color: rgba(40, 42, 54, 0.95);  
+    backdrop-filter: blur(8px);
+    transition: all 500ms ease;
+    border-radius: 2rem;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.menu {
     display: flex;
     flex-direction: column;
-    width: 3rem;
+    width: auto;
     height: fit-content;
-    left: 15vw;
-    top: 12vh;
-    margin-left: 4rem;
+    outline: none;
+    background-color: $not-so-black;
+    padding: 0.5rem;
+    border-radius: 2rem;
+    text-align: center;
+    transition: all 400ms ease;
+    & div {
+        margin: 0.4rem;
+        user-select: none;
+        font-size: 1.2rem;
+        color: $des-cyan;
+        opacity: 0.8;
+        cursor: pointer;
+        transition: all 300ms ease-in;
+        & i {
+            pointer-events: none;
+        }
+        &:hover {
+            transition: all 300ms ease;
+            color: white;
+            text-shadow: 
+            0 0 12px $cyan,
+            0 0 2px cyan;
+       }   }
+}
+.theme {
+    z-index: 4;
+    display: flex;
+    flex-direction: column-reverse;
+    margin-left: 10%;
+    margin-right: 10%;
     outline: none;
     background-color: $not-so-black;
     padding: 0.5rem;
     border-radius: 2rem;
     text-align: center;
     transition: all 300ms ease;
+    & > div {
+        margin: 0.3rem 0.5rem;
+    }
     & > div {
         margin: 0.4rem;
         user-select: none;
@@ -303,10 +351,25 @@ ul              .todo-list
 // round slider
 #slider {
     opacity: 0;
-    position: relative;
     transition: all 400ms ease;
     pointer-events: none;
-    left: 12%;
+    z-index: 4;
+    height: 100%;
+    margin: 0px;
+}
+/* .rs-chrome.rs-control.rs-classic-mode.rs-animation {
+    height: 100% !important;
+    width: 57% !important;
+    & .rs-container.rs-full {
+        height: 100% !important;
+        width: 100% !important;
+    }
+} */
+
+.slider-cont {
+    height: 90%;
+    display: flex;
+    align-items: center;
 }
 .rs-tooltip.rs-edit {
     user-select: none;
